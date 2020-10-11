@@ -1,6 +1,6 @@
 import os
 from pathlib import Path
-import logging.config
+# import logging.config
 
 import dotenv
 
@@ -97,56 +97,56 @@ APPEND_SLASH = False
 # LOGS_DIR = os.path.join(BASE_DIR, "logs")
 # os.makedirs(LOGS_DIR, exist_ok=True)
 
-LOGGING_CONFIG = None
-LOGGING = {
-    "version": 1,
-    "disable_existing_loggers": False,
-    "formatters": {
-        "verbose": {
-            "format": "[%(asctime)s] [%(levelname)s] %(module)s: %(message)s",
-        },
-        "simple": {
-            "format": "[%(asctime)s] [%(levelname)s] %(name)s: %(message)s",
-            "datefmt": "%Y-%m-%d %H:%M:%S",
-        },
-    },
-    "handlers": {
-        "null": {
-            "class": "logging.NullHandler",
-        },
-        "console": {
-            "class": "logging.StreamHandler",
-            "level": "INFO",
-            "formatter": "simple",
-            "filters": [],
-        },
-        # "file": {
-        #     "class": "logging.handlers.RotatingFileHandler",
-        #     "level": "DEBUG",
-        #     "formatter": "simple",
-        #     "filename": os.path.join(BASE_DIR, "logs", "debug.log"),
-        #     "maxBytes": 10 * 1024 * 1024,
-        #     "mode": "a",
-        #     "backupCount": 3
-        # }
-    },
-    "loggers": {
-        "django": {
-            "level": "INFO",
-            "propagate": True,
-            "handlers": ["console"],
-            "filters": [],
-        },
-        "django.security.DisallowedHost": {
-            "handlers": ["null"],
-            "propagate": False,
-        },
-        "jira": {
-            "level": "DEBUG",
-            "propagate": True,
-            "handlers": ["console"],
-        }
-    }
-}
+# LOGGING_CONFIG = None
+# LOGGING = {
+#     "version": 1,
+#     "disable_existing_loggers": False,
+#     "formatters": {
+#         "verbose": {
+#             "format": "[%(asctime)s] [%(levelname)s] %(module)s: %(message)s",
+#         },
+#         "simple": {
+#             "format": "[%(asctime)s] [%(levelname)s] %(name)s: %(message)s",
+#             "datefmt": "%Y-%m-%d %H:%M:%S",
+#         },
+#     },
+#     "handlers": {
+#         "null": {
+#             "class": "logging.NullHandler",
+#         },
+#         "console": {
+#             "class": "logging.StreamHandler",
+#             "level": "INFO",
+#             "formatter": "simple",
+#             "filters": [],
+#         },
+#         "file": {
+#             "class": "logging.handlers.RotatingFileHandler",
+#             "level": "DEBUG",
+#             "formatter": "simple",
+#             "filename": os.path.join(BASE_DIR, "logs", "debug.log"),
+#             "maxBytes": 10 * 1024 * 1024,
+#             "mode": "a",
+#             "backupCount": 3
+#         }
+#     },
+#     "loggers": {
+#         "django": {
+#             "level": "INFO",
+#             "propagate": True,
+#             "handlers": ["console"],
+#             "filters": [],
+#         },
+#         "django.security.DisallowedHost": {
+#             "handlers": ["null"],
+#             "propagate": False,
+#         },
+#         "jira": {
+#             "level": "DEBUG",
+#             "propagate": True,
+#             "handlers": ["console"],
+#         }
+#     }
+# }
 
-logging.config.dictConfig(LOGGING)
+# logging.config.dictConfig(LOGGING)
