@@ -1,2 +1,2 @@
 flake8
-django-templates
+django-extensions
